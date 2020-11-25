@@ -1,6 +1,8 @@
+import "./Footer.css";
+
 const Footer = () => {
     return( 
-        <div>Created by Lurd and saviour Bryksiu</div>
+        <div className = "BH-Footer">Created by Lurd and saviour Bryksiu</div>
     )
     
 }
