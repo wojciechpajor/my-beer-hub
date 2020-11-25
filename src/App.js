@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <p1 className = "Banner">My-Beer-Hub coming soon!</p1>
+      <p className = "BH-Banner">My-Beer-Hub coming soon!</p>
       <img src = "home-page-beer-river-1500x630.jpg"></img>
       <Footer />
     </div>
