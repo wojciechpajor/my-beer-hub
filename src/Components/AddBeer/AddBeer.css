@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.bodyStyle {
+    background: url('https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/beer-background.jpg?alt=media&token=f76a66c8-29f3-48ed-b733-a6133952f798') no-repeat top center;
+    background-size: cover;
+    height: 100vh;
+    filter: saturate(80%);
+
+}
+
+.wrapperStyle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0 20px;
+}
+
+.formStyle {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0,0.8);
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    box-shadow: 0 0 15px rgba(0,0,0,0.13);
+
+
+}
+
+.inputStyle {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4%;
+}
+
+.inputStyle {
+    width: 100%;
+}
+
+.inputStyle .input{
+    margin: 5px 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #c5ecfd;
+    padding: 15px;
+    color: #c5ecfd;
+    width: 100%;
+    }
+
+
+.buttonStyle {
+    background: cornflowerblue;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+
+}

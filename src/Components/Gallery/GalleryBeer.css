@@ -1,0 +1,20 @@
+.BeerViewStyle {
+    padding-top: 10px;
+    list-style: none;
+    display: inline-flex;
+    font-size: 140%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    
+
+}
+
+.BeerNameStyle
+{
+    font-weight: 800;
+}
+
+.beerImageStyle {
+    height: 350px;
+    width: 150px;
+}

@@ -1,22 +1,24 @@
 import "./Navbar.css"
+import {Link} from 'react-router-dom';
+import { useEffect, useState } from "react";
+import firebase from "../../firebase";
 
 const Navbar = () => {
+
+
     return( 
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">Navbar</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-            <a className="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a className="nav-link" href="#">Features</a>
-            <a className="nav-link" href="#">Beer catalog</a>
-            <a className="nav-link" href="#">Add beer</a>
-            
-        </div>
-        </div>
-    </nav>
+    <div className = "MainNav">
+        <Link to='/'>
+        <li className = "NavLink">Home</li>
+        </Link>
+        <Link to='/gallery'>
+        <li className = "NavLink">Gallery</li>
+        </Link>
+        <Link to='/addbeer'>
+        <li className = "NavLink">Add beer</li>
+        </Link>
+        <button className = "navButtonStyle">Login</button>
+    </div>
     )
     
 }
