@@ -1,3 +1,3 @@
 ﻿
-﻿App deployment: currently not available
+﻿App deployment: my-beer-hub-355e2.web.app
 
