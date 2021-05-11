@@ -1,5 +1,6 @@
 import "./Navbar.css"
 import {Link} from 'react-router-dom';
+import Login from "./Login";
 import { useEffect, useState } from "react";
 import firebase from "../../firebase";
 

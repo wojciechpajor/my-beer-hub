@@ -15,18 +15,9 @@ function Gallery() {
     return (
         <div className="GalleryGrid">
             {beers.map((beer) => (
-            <GalleryBeer
-            name={beer.name}
-            mark={beer.mark}
-            type={beer.type}
-            alk={beer.alk}
-            origin={beer.origin}
-            rating={beer.rating}
-            url={beer.url}
-            ></GalleryBeer>))}
+            <GalleryBeer props = {beer}></GalleryBeer>))}
             
-            
-        </div>
+            </div>
 
     );
 
