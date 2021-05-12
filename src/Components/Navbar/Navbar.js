@@ -1,6 +1,5 @@
 import "./Navbar.css"
 import {Link} from 'react-router-dom';
-import Login from "./Login";
 import { useEffect, useState } from "react";
 import firebase from "../../firebase";
 
@@ -18,7 +17,10 @@ const Navbar = () => {
         <Link to='/addbeer'>
         <li className = "NavLink">Add beer</li>
         </Link>
-        <button className = "navButtonStyle">Login</button>
+        <Link to='/signup'>
+        <button className = "navButtonStyle">Sign Up!</button>
+        </Link>
+        
     </div>
     )
     

@@ -23,8 +23,9 @@ const AddBeer = () => {
 
     const submitBeer = (e) => {
         e.preventDefault()
-        if ((rating > 0) && (rating <= 5)) {
+        if ((rating > 0) && (rating <= 5) && (url)) {
             addBeer({ name, mark, type, alk, origin, rating, url })
+            window.alert("Beer added succesfully !")
         
         }
         else {

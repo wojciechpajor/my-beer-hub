@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer';
 import Gallery from './Components/Gallery/Gallery';
 import Home from './Components/Home/Home.js';
 import AddBeer from './Components/AddBeer/AddBeer.js';
+import SignUp from './Components/SignUp/SignUp'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/addbeer" component={AddBeer} />
+        <Route path="/signup" component={SignUp} />
         </Switch>
         <Footer />
     </div>
