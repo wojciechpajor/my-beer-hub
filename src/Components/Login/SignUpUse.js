@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useAuth } from '../../Contexts/AuthContext';
+import { auth } from '../../firebase';
 
 const SignUpUse = (callback, validate) => {
   const [values, setValues] = useState({
@@ -28,6 +30,7 @@ const SignUpUse = (callback, validate) => {
   useEffect(
     () => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
+        auth.createUserWithEmailAndPassword(values.email, values.password)
         callback();
       }
     },
