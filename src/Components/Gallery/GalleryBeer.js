@@ -1,7 +1,10 @@
 import "./GalleryBeer.css"
 
-function GalleryBeer(name, mark, type, alk, origin, rating, url)  {
+const GalleryBeer = (beer) => {
     const altImage = "https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/No-photo.png?alt=media&token=11ec7801-2545-4b6d-85a4-896a27d957de"
+    
+    const {name, mark, type, alk, origin, rating, url} = beer.props
+
     return (
         <div className = "BeerViewStyle">
             <img className = "beerImageStyle" src = {url} alt={altImage}></img>
