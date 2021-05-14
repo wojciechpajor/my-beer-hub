@@ -1,32 +1,28 @@
 import React, { useState } from 'react';
 import './SignUpForm.css';
-import SignUpForm from './SignUpForm';
-import SignUpFormSuccess from './SignUpFormSuccess';
+import LoginForm from './LoginForm';
+import LoginFormSuccess from './LoginFormSuccess';
 
-const SignUp = () => {
+const Login = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  function submitForm() {
-    setIsSubmitted(true);
-  }
 
   const imgLink = "https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/Beer-Enthusiast.png?alt=media&token=6a26b1d6-0a46-4024-b3c5-6c8323a9369e"
 
   return (
     <>
       <div className='form-container'>
-        <span className='close-btn'>x</span>
+        <a className='close-btn' href = '../'>x</a>
         <div className='form-content-left'>
           <img className='form-img' src={imgLink} alt='spaceship' />
         </div>
         {!isSubmitted ? (
-          <SignUpForm submitForm={submitForm} />
+          <LoginForm/>
         ) : (
-          <SignUpFormSuccess />
+          <LoginFormSuccess />
         )}
       </div>
     </>
   );
 };
 
-export default SignUp;
+export default Login;

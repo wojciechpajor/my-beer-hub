@@ -1,10 +1,10 @@
 import React from 'react';
-import ValidateInfo from './ValidateInfo';
-import SignUpUse from './SignUpUse';
+import ValidateInfo from './ValidateSignUpInfo';
+import LoginUse from './LoginUse';
 import './SignUpForm.css';
 
-const SignUpForm = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values, errors } = SignUpUse(
+const LoginForm = ({ submitForm }) => {
+  const { handleChange, handleSubmit, values, errors } = LoginUse(
     submitForm,
     ValidateInfo
   );
@@ -13,8 +13,7 @@ const SignUpForm = ({ submitForm }) => {
     <div className='form-content-right'>
       <form onSubmit={handleSubmit} className='form' noValidate>
         <h1>
-          Get started with us today! Create your account by filling out the
-          information below.
+        Login to your account !
         </h1>
         <div className='form-inputs'>
           <label className='form-label'>Username</label>
@@ -29,18 +28,6 @@ const SignUpForm = ({ submitForm }) => {
           {errors.username && <p>{errors.username}</p>}
         </div>
         <div className='form-inputs'>
-          <label className='form-label'>Email</label>
-          <input
-            className='form-input'
-            type='email'
-            name='email'
-            placeholder='Enter your email'
-            value={values.email}
-            onChange={handleChange}
-          />
-          {errors.email && <p>{errors.email}</p>}
-        </div>
-        <div className='form-inputs'>
           <label className='form-label'>Password</label>
           <input
             className='form-input'
@@ -52,27 +39,15 @@ const SignUpForm = ({ submitForm }) => {
           />
           {errors.password && <p>{errors.password}</p>}
         </div>
-        <div className='form-inputs'>
-          <label className='form-label'>Confirm Password</label>
-          <input
-            className='form-input'
-            type='password'
-            name='password2'
-            placeholder='Confirm your password'
-            value={values.password2}
-            onChange={handleChange}
-          />
-          {errors.password2 && <p>{errors.password2}</p>}
-        </div>
         <button className='form-input-btn' type='submit'>
-          Sign up
+        Login
         </button>
         <span className='form-input-login'>
-          Already have an account? Login <a href='#'>here</a>
+          Already have an account? Login <a href='signup'>here</a>
         </span>
       </form>
     </div>
   );
 };
 
-export default SignUpForm;
+export default LoginForm;

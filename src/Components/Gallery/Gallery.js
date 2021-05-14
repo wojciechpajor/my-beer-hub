@@ -14,7 +14,7 @@ function Gallery() {
 
     return (
         <div className="GalleryGrid">
-            {beers.map((beer) => (
+            {beers.map(beer => (
                 <GalleryBeer props={beer}></GalleryBeer>))}
 
         </div>

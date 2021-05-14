@@ -17,8 +17,8 @@ const Navbar = () => {
         <Link to='/addbeer'>
         <li className = "NavLink">Add beer</li>
         </Link>
-        <Link to='/signup'>
-        <button className = "navButtonStyle">Sign Up!</button>
+        <Link to='/login'>
+        <button className = "navButtonStyle">Login</button>
         </Link>
         
     </div>
