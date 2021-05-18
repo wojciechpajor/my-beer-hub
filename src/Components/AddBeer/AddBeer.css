@@ -1,16 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-}
-
 .bodyStyle {
-    background: url('https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/beer-background.jpg?alt=media&token=f76a66c8-29f3-48ed-b733-a6133952f798') no-repeat top center;
     background-size: cover;
-    height: 100vh;
+    height: 90vh;
     filter: saturate(80%);
-
 }
 
 .labelText {
