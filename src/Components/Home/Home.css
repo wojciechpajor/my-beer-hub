@@ -1,18 +1,11 @@
 .App {
-  background-color: rgb(255, 242, 213)
+  background-color: #e6af2e;
 }
-
-.BH-Banner {
-    font-size: 2rem;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    image-orientation: flip;
-  }
 
 .HomeImageStyle {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 87%;
 }
   
