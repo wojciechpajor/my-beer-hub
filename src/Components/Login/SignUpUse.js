@@ -1,6 +1,4 @@
 import { useState, useEffect, useContext } from 'react';
-import { useAuth } from '../../Contexts/AuthContext';
-import { AuthContext } from '../../Contexts/AuthContext'
 import { auth } from '../../firebase';
 
 const SignUpUse = (callback, validate) => {
@@ -20,11 +18,6 @@ const SignUpUse = (callback, validate) => {
       [name]: value
     });
   };
-  const createAccount = async (email, password) =>
-  {
-    auth.signInWithEmailAndPassword(email, password)
-    await email.sendEmailVerification()
-  }
 
 
 
@@ -36,9 +29,12 @@ const SignUpUse = (callback, validate) => {
   };
 
   useEffect(
-    () => {
+    async () => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
-        createAccount(values.email, values.password)
+        await auth.createUserWithEmailAndPassword(values.email, values.password)
+        var user = auth.currentUser
+        user.sendEmailVerification()
+      
         callback();
       }
     },

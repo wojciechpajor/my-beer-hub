@@ -1,3 +1,5 @@
+import userEvent from "@testing-library/user-event";
+import {auth} from '../../firebase'
 import "./Home.css"
 
 const Home = () => {
