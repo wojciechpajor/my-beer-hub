@@ -19,11 +19,8 @@ const SignUpUse = (callback, validate) => {
     });
   };
 
-
-
   const handleSubmit = e => {
     e.preventDefault();
-
     setErrors(validate(values));
     setIsSubmitting(true);
   };

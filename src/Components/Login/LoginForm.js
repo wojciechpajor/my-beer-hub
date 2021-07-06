@@ -1,12 +1,12 @@
 import React from 'react';
-import ValidateInfo from './ValidateSignUpInfo';
+import ValidateLogin from './ValidateLoginInfo';
 import LoginUse from './LoginUse';
 import './SignUpForm.css';
 
 const LoginForm = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = LoginUse(
     submitForm,
-    ValidateInfo
+    ValidateLogin
   );
 
   return (
@@ -16,16 +16,16 @@ const LoginForm = ({ submitForm }) => {
         Login to your account !
         </h1>
         <div className='form-inputs'>
-          <label className='form-label'>Username</label>
+          <label className='form-label'>E-mail</label>
           <input
             className='form-input'
             type='text'
-            name='username'
-            placeholder='Enter your username'
-            value={values.username}
+            name='email'
+            placeholder='Enter your email'
+            value={values.email}
             onChange={handleChange}
           />
-          {errors.username && <p>{errors.username}</p>}
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div className='form-inputs'>
           <label className='form-label'>Password</label>
@@ -43,7 +43,7 @@ const LoginForm = ({ submitForm }) => {
         Login
         </button>
         <span className='form-input-login'>
-          Already have an account? Login <a href='signup'>here</a>
+          Don't have account ? Create one <a href='signup'>here</a>
         </span>
       </form>
     </div>
