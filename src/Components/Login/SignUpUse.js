@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { auth } from '../../firebase';
 
 const SignUpUse = (callback, validate) => {
   const [values, setValues] = useState({
@@ -20,14 +21,17 @@ const SignUpUse = (callback, validate) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     setErrors(validate(values));
     setIsSubmitting(true);
   };
 
   useEffect(
-    () => {
+    async () => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
+        await auth.createUserWithEmailAndPassword(values.email, values.password)
+        var user = auth.currentUser
+        user.sendEmailVerification()
+      
         callback();
       }
     },

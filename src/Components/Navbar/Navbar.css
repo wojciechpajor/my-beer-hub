@@ -1,5 +1,6 @@
 .MainNav {
-    background-color: rgb(5, 27, 27);
+    color: white;
+    background-color: #191716;
     width: 100%;
     height: 40px;
     display: flex;
@@ -8,17 +9,30 @@
     
 }
 
+.accPanelStyle {
+    display: flex;
+    
+}
+
 .NavLink {
-    background: turquoise;
+    background: #3d348b;
     text-align: center;
     padding: 8px;
     border-radius: 30px;
     color: #fff;
 }
 
-.navButtonStyle {
-    background: turquoise;
+.NavAccName {
+    background: #3d348b;
     text-align: center;
+    padding: 8px;
+    color: rgb(255, 255, 255);
+}
+
+.navButtonStyle {
+    background: #3d348b;
+    text-align: center;
+    margin-left: 20px;
     padding: 5px;
     border-radius: 5px;
     color: #fff;
