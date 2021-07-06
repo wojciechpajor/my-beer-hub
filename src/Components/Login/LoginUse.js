@@ -44,9 +44,8 @@ const LoginUse = (callback, validate) => {
         callback();
         })
         .catch((error) => {
-          var errorCode = error.code;
           var errorMessage = error.message;
-          return window.alert({errorMessage})
+          return window.alert(errorMessage)
         })
       }
     },
