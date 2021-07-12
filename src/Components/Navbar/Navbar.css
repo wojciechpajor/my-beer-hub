@@ -22,6 +22,15 @@
     color: #fff;
 }
 
+.NavLink-out {
+    margin-left: 5px;
+    background: #3d348b;
+    text-align: center;
+    padding: 8px;
+    border-radius: 30px;
+    color: #fff;
+}
+
 .NavAccName {
     background: #3d348b;
     text-align: center;

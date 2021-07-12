@@ -1,3 +1,12 @@
+.loginStyle {
+  position: absolute;
+  top: 18%;
+  bottom: 18%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .form-container {
     margin: auto;
     width: 1000px;
@@ -42,7 +51,7 @@
     width: 60%;
     height: 60%;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -57,7 +66,7 @@
   .form-content-right {
     border-radius: 0 10px 10px 0;
     position: relative;
-    background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
+    background: #191716;
   }
   
   .form {

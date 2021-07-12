@@ -8,7 +8,7 @@
     margin-top: 4px;
     margin-bottom: 0px;
     font-size: 22px;
-    color: aqua;
+    color: #c5ecfd;
 }
 
 .wrapperStyle {
@@ -22,7 +22,7 @@
 .formStyle {
     max-width: 500px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0,0.8);
+    background-color: #191716;
     padding: 30px;
     border-radius: 15px;
     display: flex;
@@ -53,7 +53,7 @@
 
 
 .buttonStyle {
-    background: cornflowerblue;
+    background: #3d348b;
     text-align: center;
     padding: 12px;
     border-radius: 5px;

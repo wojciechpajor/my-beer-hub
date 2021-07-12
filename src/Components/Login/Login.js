@@ -14,7 +14,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div className="loginStyle">
       <div className='form-container'>
         <Link className='close-btn' to="/">x</Link>
         <div className='form-content-left'>
@@ -26,7 +26,7 @@ const Login = () => {
           <LoginFormSuccess />
         )}
       </div>
-    </>
+    </div>
   );
 };
 

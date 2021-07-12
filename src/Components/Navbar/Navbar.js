@@ -31,11 +31,13 @@ const Navbar = () => {
             userEmail ? (
                 <div className = "accPanelStyle">
                 <li className="NavAccName" >Logged as {userEmail}</li>
-                <button className="navButtonStyle" onClick = {handleLogOut}>Log Out</button>
+                <Link to ='/'>
+                    <li className="NavLink-out" onClick = {handleLogOut}>Log Out</li>
+                </Link>
                 </div>
             ) : (
             <Link to='/login'>
-            <button className="navButtonStyle">Login</button>
+            <li className="NavLink">Login</li>
             </Link>
             )
             }
