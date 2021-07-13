@@ -1,15 +1,20 @@
 import "./AddBeer.css"
 import React, { useState, useEffect, Fragment } from 'react';
 import firebase from "../../firebase"
+import {useDispatch, useSelector} from 'react-redux'
+import { selectUserEmail, setActiveUser } from '../../Features/userSlice'
 
 const AddBeer = () => {
+    const userEmail = useSelector(selectUserEmail)
+    const altImg = "waiting for upload"
     const [name, setName] = useState('');
     const [mark, setMark] = useState('');
     const [type, setType] = useState('');
     const [alk, setAlk] = useState('');
     const [origin, setOrigin] = useState('');
     const [rating, setRating] = useState('');
-    const [url, setUrl] = useState('');
+    const [url, setUrl] = useState('https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/No-photo.png?alt=media&token=6783d368-10b7-44b9-ab55-ef46c4a2aa7f');
+    const [beer, setBeer] = useState(name,mark,type,alk,origin,rating,url);
 
     const ref = firebase.firestore().collection('Beers')
 
@@ -24,7 +29,7 @@ const AddBeer = () => {
     const submitBeer = (e) => {
         e.preventDefault()
         if ((rating > 0) && (rating <= 5) && (url)) {
-            addBeer({ name, mark, type, alk, origin, rating, url })
+            addBeer({ name, mark, type, alk, origin, rating, url, userEmail })
             window.alert("Beer added succesfully !")
         
         }
@@ -64,6 +69,20 @@ const AddBeer = () => {
 
 
                     </div>
+
+                </div>
+
+            </div>
+            <div className = "BeerViewStyle">
+                <img className = "beerImageStyle" src = {url} alt={altImg}></img>
+                <div>
+                    <li className = "BeerNameStyle">Name: {name}</li>
+                    <li>Mark: {mark}</li>
+                    <li>Type: {type}</li>
+                    <li>Alk: {alk}</li>
+                    <li>Origin: {origin}</li>
+                    <li>rating: {rating}/5</li>
+                    {userEmail ? (<li>User: {userEmail}</li>) : null }
 
                 </div>
 
