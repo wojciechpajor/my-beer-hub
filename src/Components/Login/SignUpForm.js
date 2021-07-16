@@ -12,7 +12,7 @@ const SignUpForm = ({ submitForm }) => {
   return (
     <div className='form-content-right'>
       <form onSubmit={handleSubmit} className='form' noValidate>
-        <h1>
+        <h1 className='loginTitle'>
           Get started with us today! Create your account by filling out the
           information below.
         </h1>

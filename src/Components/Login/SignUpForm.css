@@ -1,52 +1,31 @@
 .loginStyle {
-  position: absolute;
-  top: 18%;
-  bottom: 18%;
-  left: 0;
-  right: 0;
-  margin: auto;
+  position: center;
+  display: flex;
+  margin: 2px;
+
 }
+
 
 .form-container {
     margin: auto;
-    width: 1000px;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    min-height: 550px;
+    min-width: 320px;
     position: relative;
     border-radius: 10px;
-    height: 600px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
   }
   
   .close-btn {
     position: absolute;
-    top: 2%;
-    right: 3%;
+    top: 0%;
+    right: 6%;
     font-size: 1.5rem;
     z-index: 1;
     color: #fff;
     cursor: pointer;
   }
-  
-  .form-content-left {
-    background: linear-gradient(
-      90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
-    );
-    border-radius: 10px 0 0 10px;
-    position: relative;
-  }
-  
-  .form-img {
-    width: 95%;
-    height: 95%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
+
   .form-img-2 {
     width: 60%;
     height: 60%;
@@ -64,16 +43,12 @@
   }
   
   .form-content-right {
-    border-radius: 0 10px 10px 0;
-    position: relative;
     background: #191716;
+    border-radius: 15px;
   }
   
   .form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: center;
     width: 90%;
     height: 100%;
     display: flex;
@@ -152,6 +127,7 @@
   .form-input-login {
     font-size: 0.8rem;
     margin-top: 10px;
+    margin-bottom: 10px;
     color: #fff;
     width: 80%;
     text-align: center;

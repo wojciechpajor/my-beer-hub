@@ -1,51 +1,65 @@
-.MainNav {
-    color: white;
-    background-color: #191716;
+.hamnav {
     width: 100%;
-    height: 40px;
+    background: #1d2124;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.loginInfo {
+    color: #1c7430;
+}
+
+.hamnavLog {
+    margin: auto;
+}
+
+.radius {
+    background: #1b1e21;
+    border-radius: 15px;
+}
+
+.hamnav label, .hamburger {
+    display: none;
+}
+
+.hamItems {
     display: flex;
-    justify-content: space-around;
-    list-style: none;
-    
 }
 
-.accPanelStyle {
-    display: flex;
-    
-}
-
-.NavLink {
-    background: #3d348b;
+.hamItems a {
+    width: 15%;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
     text-align: center;
-    padding: 8px;
-    border-radius: 30px;
-    color: #fff;
+}
+.loginInfo {
+
 }
 
-.NavLink-out {
-    margin-left: 5px;
-    background: #3d348b;
-    text-align: center;
-    padding: 8px;
-    border-radius: 30px;
-    color: #fff;
-}
+@media screen and (max-width: 768px) {
+    .hamnav label {
+        display: inline-block;
+        color: white;
+        background: #1d2124;
+        font-style: normal;
+        font-size: 1.2em;
+        padding: 10px;
+        z-index: 999;
+    }
 
-.NavAccName {
-    background: #3d348b;
-    text-align: center;
-    padding: 8px;
-    color: rgb(255, 255, 255);
-}
+    .hamItems a {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border-top: 1px solid #333;
+    }
 
-.navButtonStyle {
-    background: #3d348b;
-    text-align: center;
-    margin-left: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    color: #fff;
-    text-transform: uppercase;
+    .hamItems { display: none;}
+    .hamnav input:checked ~ .hamItems {display: block;}
+
+
 }
 
 

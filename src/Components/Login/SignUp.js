@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './SignUpForm.css';
 import SignUpForm from './SignUpForm';
 import SignUpFormSuccess from './SignUpFormSuccess';
+import {Link} from "react-router-dom";
 
 const SignUp = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -15,10 +16,7 @@ const SignUp = () => {
   return (
     <div className = "loginStyle">
       <div className='form-container'>
-        <a className='close-btn' href = '../' >x</a>
-        <div className='form-content-left'>
-          <img className='form-img' src={imgLink} alt='spaceship' />
-        </div>
+        <Link className='close-btn' to="/">x</Link>
         {!isSubmitted ? (
           <SignUpForm submitForm={submitForm} />
         ) : (

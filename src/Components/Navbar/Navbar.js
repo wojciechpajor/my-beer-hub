@@ -17,31 +17,25 @@ const Navbar = () => {
     }
 
     return (
-        <header className="MainNav">
-            <Link to='/'>
-                <li className="NavLink">Home</li>
-            </Link>
-            <Link to='/gallery'>
-                <li className="NavLink">Gallery</li>
-            </Link>
-            <Link to='/addbeer'>
-                <li className="NavLink">Add beer</li>
-            </Link>
-            {
-            userEmail ? (
-                <div className = "accPanelStyle">
-                <li className="NavAccName" >Logged as {userEmail}</li>
-                <Link to ='/'>
-                    <li className="NavLink-out" onClick = {handleLogOut}>Log Out</li>
-                </Link>
-                </div>
-            ) : (
-            <Link to='/login'>
-            <li className="NavLink">Login</li>
-            </Link>
-            )
-            }
-        </header>
+        <nav className='hamnav'>
+            <label for='hamburger'>&#9776;</label>
+            <input type='checkbox' id='hamburger' className='hamburger' />
+            <div className='hamItems'>
+                <Link to='/'>Home</Link>
+                <Link to='/gallery'>Gallery</Link>
+                <Link to='/addbeer'>Add beer</Link>
+                {
+                    userEmail ? (
+                        <div className='hamnavLog'>
+                            <a className='loginInfo'>Logged as {userEmail}</a>
+                            <Link to ='/' onClick = {handleLogOut}>Log Out</Link>
+                        </div>
+                    ) : (
+                        <Link to='/login'>Login</Link>
+                    )
+                }
+            </div>
+        </nav>
     )
 
 }

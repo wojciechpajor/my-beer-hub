@@ -64,25 +64,12 @@ const AddBeer = () => {
                         <div>
                         <p class = "labelText">Upload beer photo:</p>
                         <input type="file" class="input" onChange={onFileChange} accept =".png, .jpg" />
+                            <img className = "addBeerImageStyle" src = {url} alt={altImg}></img>
                         </div>
                         <div className="buttonStyle" onClick={submitBeer} >Send</div>
 
 
                     </div>
-
-                </div>
-
-            </div>
-            <div className = "BeerViewStyle">
-                <img className = "beerImageStyle" src = {url} alt={altImg}></img>
-                <div>
-                    <li className = "BeerNameStyle">Name: {name}</li>
-                    <li>Mark: {mark}</li>
-                    <li>Type: {type}</li>
-                    <li>Alk: {alk}</li>
-                    <li>Origin: {origin}</li>
-                    <li>rating: {rating}/5</li>
-                    {userEmail ? (<li>User: {userEmail}</li>) : null }
 
                 </div>
 

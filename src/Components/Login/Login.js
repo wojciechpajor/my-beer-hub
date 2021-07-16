@@ -17,9 +17,6 @@ const Login = () => {
     <div className="loginStyle">
       <div className='form-container'>
         <Link className='close-btn' to="/">x</Link>
-        <div className='form-content-left'>
-          <img className='form-img' src={imgLink} alt='spaceship' />
-        </div>
         {!isSubmitted ? (
           <LoginForm submitForm={submitForm}/>
         ) : (

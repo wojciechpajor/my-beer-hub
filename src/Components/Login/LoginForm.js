@@ -12,7 +12,7 @@ const LoginForm = ({ submitForm }) => {
   return (
     <div className='form-content-right'>
       <form onSubmit={handleSubmit} className='form' noValidate>
-        <h1>
+        <h1 className="loginTitle">
         Login to your account !
         </h1>
         <div className='form-inputs'>

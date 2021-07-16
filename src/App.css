@@ -1,4 +1,7 @@
 .App {
-    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/Beer-hub-banner.jpg?alt=media&token=50967c2f-aec3-435a-a799-d26b20b3932d");
-    height: 90vh;
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/Beer-hub-banner.jpg?alt=media&token=50967c2f-aec3-435a-a799-d26b20b3932d");
+    background-size: 100%;
+    flex-direction: column;
 }

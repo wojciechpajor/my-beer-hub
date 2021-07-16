@@ -1,7 +1,8 @@
 .bodyStyle {
-    background-size: cover;
-    height: 90vh;
+    margin-top: auto;
+    margin-bottom: auto;
     filter: saturate(80%);
+
 }
 
 .labelText {
@@ -12,16 +13,13 @@
 }
 
 .wrapperStyle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    padding: 0 20px;
+margin: 2px;
+    z-index: 99;
 }
 
 .formStyle {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 400px;
+    margin: auto;
     background-color: #191716;
     padding: 30px;
     border-radius: 15px;
@@ -61,4 +59,10 @@
     cursor: pointer;
     text-transform: uppercase;
 
+}
+
+.addBeerImageStyle {
+    height: 340px;
+    width: 150px;
+    margin-bottom: 5px;
 }
