@@ -10,6 +10,7 @@ import Login from './Components/Login/Login'
 import SignUp from './Components/Login/SignUp'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+
 function App() {
   return (
     <Router>

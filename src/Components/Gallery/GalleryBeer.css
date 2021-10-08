@@ -1,20 +1,26 @@
 .BeerViewStyle {
+    /*margin: 2px;*/
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     padding-top: 10px;
     list-style: none;
-    display: inline-flex;
-    font-size: 140%;
+    font-size: 100%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*width: 100%;*/
+    border: solid;
+    border-radius: 12%;
+
+
     
     
 
-}
-
-.BeerNameStyle
-{
-    font-weight: 800;
 }
 
 .beerImageStyle {
-    height: 350px;
-    width: 150px;
+   height: 240px;
+
 }

@@ -1,20 +1,17 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
 .GalleryGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     
 
 }
-
-@media only screen and (max-width: 1000px){
-    .GalleryGrid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    }
+.highlightStyle {
+    display: flex;
+    justify-content: center;
 }
 
-@media only screen and (max-width: 650px){
-    .GalleryGrid{
-    display: grid;
-    grid-template-columns: 1fr;
-    }
+.activeSlide {
+    transform: scale(0.2);
 }
