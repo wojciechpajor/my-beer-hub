@@ -1,16 +1,13 @@
 import "./AddBeer.css"
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState} from 'react';
 import firebase from "../../firebase";
-import {useDispatch, useSelector} from 'react-redux';
-import { selectUserEmail, setActiveUser } from '../../Features/userSlice';
+import { useSelector} from 'react-redux';
+import { selectUserEmail} from '../../Features/userSlice';
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
-import {image64toCanvasRef} from './ReusableUtils';
-import { RemoveBgResult, RemoveBgError, removeBackgroundFromImageBase64 } from "remove.bg";
 
 const AddBeer = () => {
     const userEmail = useSelector(selectUserEmail)
-    const altImg = "waiting for upload"
     const [name, setName] = useState('');
     const [mark, setMark] = useState('');
     const [type, setType] = useState('');
@@ -23,23 +20,7 @@ const AddBeer = () => {
     const [cropped, setCropped] = useState(null);
     const [src, selectFile] = useState(null);
     const [image, setImage] = useState(null);
-    const [croppedBgBeer, setCroppedBgBeer ] = useState(null);
 
-
-    const outputFile = `${__dirname}/out/img-removed-from-file.png`;
-
-    removeBackgroundFromImageBase64({
-        cropped,
-        apiKey: "FVjq3nUyB8JM34G83ig29hpy",
-        size: "regular",
-        type: "product",
-        outputFile
-    }).then((result: RemoveBgResult) => {
-        console.log(`File saved to ${outputFile}`);
-        setCroppedBgBeer(result.cropped);
-    }).catch((errors: Array<RemoveBgError>) => {
-        console.log(JSON.stringify(errors));
-    });
 
     const ref = firebase.firestore().collection('Beers')
 
@@ -66,7 +47,6 @@ const AddBeer = () => {
         const base64Image = canvas.toDataURL('image/jpeg')
 
         await setCropped(base64Image)
-        //await removeBackgroundFromImageBase64(croppedBgBeer)
 
     }
 
@@ -102,16 +82,16 @@ const AddBeer = () => {
         <div className="bodyStyle">
             <div className="wrapperStyle">
                 <div className="formStyle">
-                    <div class="inputStyle">
-                        <input required type="text" class="input" placeholder="Beer name" onChange={(e) => setName(e.target.value)} ></input>
-                        <input type="text" class="input" placeholder="Beer Mark" onChange={(e) => setMark(e.target.value)} />
-                        <input type="text" class="input" placeholder="Beer Type" onChange={(e) => setType(e.target.value)} />
-                        <input type="number" class="input" max={100} min={0} placeholder="Beer Alk" onChange={(e) => setAlk(e.target.value)} />
-                        <input type="text" class="input" placeholder="Beer Origin" onChange={(e) => setOrigin(e.target.value)} />
-                        <input type="number" class="input" min={0} max={5} placeholder="Beer Rating" onChange={(e) => setRating(e.target.value)} />
+                    <div className="inputStyle">
+                        <input required type="text" className="input" placeholder="Beer name" onChange={(e) => setName(e.target.value)} ></input>
+                        <input type="text" className="input" placeholder="Beer Mark" onChange={(e) => setMark(e.target.value)} />
+                        <input type="text" className="input" placeholder="Beer Type" onChange={(e) => setType(e.target.value)} />
+                        <input type="number" className="input" max={100} min={0} placeholder="Beer Alk" onChange={(e) => setAlk(e.target.value)} />
+                        <input type="text" className="input" placeholder="Beer Origin" onChange={(e) => setOrigin(e.target.value)} />
+                        <input type="number" className="input" min={0} max={5} placeholder="Beer Rating" onChange={(e) => setRating(e.target.value)} />
                         <div>
                         <p class = "labelText">Upload beer photo:</p>
-                        <input type="file" class="input" onChange={handleFileChange} accept ="image/*" />
+                        <input type="file" className="input" onChange={handleFileChange} accept ="image/*" />
                             {src && (
                                 <div>
                                     <ReactCrop

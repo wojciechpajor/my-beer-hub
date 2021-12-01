@@ -1,5 +1,5 @@
 import './App.css';
-import react from 'react';
+import './colors.css';
 import Navbar from './Components/Navbar/Navbar.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Components/Footer/Footer';
@@ -14,8 +14,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <Router>
-      <Navbar />
-      <main role="main" className="App container-fluid">
+      <main role="main" className="App">
+          <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/gallery" component={Gallery} />
@@ -23,8 +23,8 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
         </Switch>
+          <Footer />
       </main>
-      <Footer />
     </Router>
   );
 }

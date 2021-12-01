@@ -1,17 +1,18 @@
 @import '~slick-carousel/slick/slick.css';
 @import '~slick-carousel/slick/slick-theme.css';
 
-.GalleryGrid {
-    display: flex;
-    flex-direction: row;
-    
-
+.galleryStyle {
+    width: 100vw;
 }
+
 .highlightStyle {
     display: flex;
     justify-content: center;
 }
 
-.activeSlide {
-    transform: scale(0.2);
+.sliderStyle {
+    display: flex;
+    width: 100vw;
+    margin-right: auto;
+    margin-left: auto;
 }

@@ -1,12 +1,9 @@
 .HomeImageStyle {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 87%;
+
 }
 
 .bannerStyle {
   font-size: 8vw;
   text-align: center;
-  color: black;
+  color: var(--black);
 }

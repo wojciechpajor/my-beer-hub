@@ -16,7 +16,7 @@ function Gallery() {
             </div>
         ));
     const settings = {
-        className: "center",
+        className: "sliderStyle",
         dots: false,
         centerMode: true,
         centerPadding: "0",
@@ -24,6 +24,7 @@ function Gallery() {
         autoplay: true,
         speed: 500,
         focusOnSelect: true,
+        arrows: false,
         slidesToShow: 5,
         slidesToScroll: 1,
         responsive: [
@@ -74,7 +75,7 @@ function Gallery() {
 
     return (
     beers[highlightedBeer] ? (
-        <div>
+        <div className="galleryStyle">
             <div className="highlightStyle">
                 <GalleryHighlightedBeer props = {beers[highlightedBeer]}></GalleryHighlightedBeer>
             </div>

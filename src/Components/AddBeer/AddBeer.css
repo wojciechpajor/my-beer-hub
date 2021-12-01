@@ -7,7 +7,7 @@
 
 .labelText {
     margin-top: 4px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     font-size: 22px;
     color: #c5ecfd;
 }
@@ -18,9 +18,9 @@ margin: 2px;
 }
 
 .formStyle {
-    max-width: 400px;
+    max-width: 320px;
     margin: auto;
-    background-color: #191716;
+    background-color: var(--black);
     padding: 30px;
     border-radius: 15px;
     display: flex;
@@ -51,7 +51,7 @@ margin: 2px;
 
 
 .buttonStyle {
-    background: #3d348b;
+    background: var(--my-blue);
     text-align: center;
     padding: 12px;
     border-radius: 5px;
@@ -59,6 +59,10 @@ margin: 2px;
     cursor: pointer;
     text-transform: uppercase;
 
+}
+.buttonStyle:hover {
+    cursor: pointer;
+    background: var(--my-blue-active);
 }
 
 .addBeerImageStyle {

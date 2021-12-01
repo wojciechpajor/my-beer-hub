@@ -1,24 +1,18 @@
 .loginStyle {
-  position: center;
   display: flex;
-  margin: 2px;
-
+  margin: auto;
 }
 
 
 .form-container {
-    margin: auto;
-    min-height: 550px;
     min-width: 320px;
-    position: relative;
     border-radius: 10px;
     display: grid;
-
   }
   
   .close-btn {
     position: absolute;
-    top: 0%;
+    top: 0;
     right: 6%;
     font-size: 1.5rem;
     z-index: 1;
@@ -39,17 +33,21 @@
     text-align: center;
     font-size: 24px;
     margin-top: 80px;
+    margin-right: 5px;
+    margin-left: 5px;
     color: #fff;
   }
   
   .form-content-right {
-    background: #191716;
+    background: var(--black);
     border-radius: 15px;
+    max-width: 320px;
   }
   
   .form {
+    padding-top: 10px;
+    margin: auto;
     position: center;
-    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -92,7 +90,7 @@
     width: 100%;
     border: none;
   }
-  
+
   .form-input::placeholder {
     color: #595959;
     font-size: 12px;
@@ -103,11 +101,7 @@
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;
-    background: linear-gradient(
-      90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
-    );
+    background: var(--my-blue);
     outline: none;
     border: none;
     color: #fff;
@@ -116,12 +110,7 @@
   
   .form-input-btn:hover {
     cursor: pointer;
-    background: linear-gradient(
-      90deg,
-      rgb(39, 143, 255) 0%,
-      rgb(12, 99, 250) 100%
-    );
-    transition: all 0.4s ease-out;
+    background: var(--my-blue-active)
   }
   
   .form-input-login {
@@ -135,6 +124,6 @@
   
   .form-input-login a {
     text-decoration: none;
-    color: #27cdff;
+    color: var(--my-blue-active);
     font-weight: 600;
   }

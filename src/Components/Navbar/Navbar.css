@@ -1,50 +1,65 @@
-.hamnav {
-    width: 100%;
-    background: #1d2124;
+.hamNav {
+    width: 100vw;
+    background: var(--black);
     position: sticky;
     top: 0;
     z-index: 999;
 }
 
-.loginInfo {
-    color: #1c7430;
-}
-
-.hamnavLog {
+.hamNavLog {
     margin: auto;
 }
 
 .radius {
-    background: #1b1e21;
+    background: var(--black);
     border-radius: 15px;
 }
 
-.hamnav label, .hamburger {
+.hamNav label, .hamburger {
     display: none;
 }
 
 .hamItems {
     display: flex;
 }
+.hamItems:hover a{
+    text-decoration: none !important;
+}
+.NavLinkStyle {
+    color: white;
+}
+.NavLinkStyle:hover {
+    color: white;
+    font-weight: bold;
+    background-color: var(--my-blue);
+    border-radius: 5px;
+    text-decoration: none;
+}
+.NavLinkStyleActive {
+    color: var(--light-yellow);
+    font-weight: bold;
+}
+.NavLinkStyleActive:hover {
+    color: white;
+    font-weight: bold;
+    background-color: var(--my-blue);
+    border-radius: 5px;
+}
 
 .hamItems a {
     width: 15%;
     padding: 10px;
-    color: white;
-    text-decoration: none;
     text-align: center;
-}
-.loginInfo {
-
 }
 
 @media screen and (max-width: 768px) {
-    .hamnav label {
+    .hamNav label {
         display: inline-block;
         color: white;
-        background: #1d2124;
+        background: var(--black);
         font-style: normal;
         font-size: 1.2em;
+        margin: auto;
         padding: 10px;
         z-index: 999;
     }
@@ -53,11 +68,11 @@
         box-sizing: border-box;
         display: block;
         width: 100%;
-        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
     }
 
     .hamItems { display: none;}
-    .hamnav input:checked ~ .hamItems {display: block;}
+    .hamNav input:checked ~ .hamItems {display: block;}
 
 
 }
