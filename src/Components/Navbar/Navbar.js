@@ -40,7 +40,7 @@ const Navbar = () => {
             <label for='hamburger'>&#9776;</label>
             <input type='checkbox' id='hamburger' className='hamburger' />
             <div id='navbarContainer' className='hamItems'>
-                <Link to='/' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Home</Link>
+                <Link to='/' className="NavLinkStyle active" onClick={(e) => handleClick(e)}>Home</Link>
                 <Link to='/gallery' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Gallery</Link>
                 <Link to='/addbeer' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Add beer</Link>
                 {
