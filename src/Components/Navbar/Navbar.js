@@ -1,13 +1,11 @@
-import "./Navbar.css"
+import "./Navbar.css";
 import {Link} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux'
-import { selectUserEmail, setActiveUser } from '../../Features/userSlice'
-import {useState} from "react";
+import {useDispatch, useSelector} from 'react-redux';
+import { selectUserEmail, setActiveUser } from '../../Features/userSlice';
 
 
 const Navbar = () => {
 
-    const [activeUrl,setActiveUrl] = useState("http://localhost:3000/");
     const dispatch = useDispatch()
     const userEmail = useSelector(selectUserEmail)
 
@@ -18,19 +16,28 @@ const Navbar = () => {
           }))
     }
 
-    const toggleHam = (e) => {
+    const handleClick = () => {
         document.getElementById("hamburger").checked = false;
-        setActiveUrl(e.target.href);
+        let navButtons = document.getElementsByClassName("NavLinkStyle");
+        for (let i = 0; i < navButtons.length; i++) {
+            navButtons[i].addEventListener("click", function() {
+                let current = document.getElementsByClassName("active");
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" active", "");
+                }
+                this.className += " active";
+            });
+        }
     }
 
     return (
         <nav className='hamNav'>
             <label for='hamburger'>&#9776;</label>
             <input type='checkbox' id='hamburger' className='hamburger' />
-            <div className='hamItems'>
-                <Link to='/' className={activeUrl==="http://localhost:3000/"?"NavLinkStyleActive":"NavLinkStyle"} onClick={(e) => toggleHam(e)}>Home</Link>
-                <Link to='/gallery' className={activeUrl==="http://localhost:3000/gallery"?"NavLinkStyleActive":"NavLinkStyle"} onClick={(e) => toggleHam(e)}>Gallery</Link>
-                <Link to='/addbeer' className={activeUrl==="http://localhost:3000/addbeer"?"NavLinkStyleActive":"NavLinkStyle"} onClick={(e) => toggleHam(e)}>Add beer</Link>
+            <div id='navbarContainer' className='hamItems'>
+                <Link to='/' className="NavLinkStyle " onClick={(e) => handleClick(e)}>Home</Link>
+                <Link to='/gallery' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Gallery</Link>
+                <Link to='/addbeer' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Add beer</Link>
                 {
                     userEmail ? (
                         <div className='hamNavLog'>
@@ -38,7 +45,7 @@ const Navbar = () => {
                             <Link to ='/' className='NavLinkStyle' onClick={handleLogOut}>Log Out</Link>
                         </div>
                     ) : (
-                        <Link to='/login' className={activeUrl==="http://localhost:3000/login"?"NavLinkStyleActive":"NavLinkStyle"} onClick={(e) => toggleHam(e)}>Login</Link>
+                        <Link to='/login' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Login</Link>
                     )
                 }
             </div>

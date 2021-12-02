@@ -5,6 +5,11 @@
     top: 0;
     z-index: 999;
 }
+.active {
+    color: var(--light-yellow) !important;
+    font-weight: bold;
+    background-color: var(--black) !important;
+}
 
 .hamNavLog {
     margin: auto;
@@ -34,16 +39,6 @@
     background-color: var(--my-blue);
     border-radius: 5px;
     text-decoration: none;
-}
-.NavLinkStyleActive {
-    color: var(--light-yellow);
-    font-weight: bold;
-}
-.NavLinkStyleActive:hover {
-    color: white;
-    font-weight: bold;
-    background-color: var(--my-blue);
-    border-radius: 5px;
 }
 
 .hamItems a {
