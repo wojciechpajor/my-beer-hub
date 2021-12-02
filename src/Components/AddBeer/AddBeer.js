@@ -14,8 +14,8 @@ const AddBeer = () => {
     const [alk, setAlk] = useState('');
     const [origin, setOrigin] = useState('');
     const [rating, setRating] = useState('');
-    const [url, setUrl] = useState('https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/No-photo.png?alt=media&token=6783d368-10b7-44b9-ab55-ef46c4a2aa7f');
-    const [beer, setBeer] = useState([name,mark,type,alk,origin,rating,url]);
+    //const [url, setUrl] = useState('https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/No-photo.png?alt=media&token=6783d368-10b7-44b9-ab55-ef46c4a2aa7f');
+    //const [beer, setBeer] = useState([name,mark,type,alk,origin,rating,url]);
     const [crop, setCrop] = useState({aspect: 150 / 340,width: 340 });
     const [cropped, setCropped] = useState(null);
     const [src, selectFile] = useState(null);
@@ -83,14 +83,14 @@ const AddBeer = () => {
             <div className="wrapperStyle">
                 <div className="formStyle">
                     <div className="inputStyle">
-                        <input required type="text" className="input" placeholder="Beer name" onChange={(e) => setName(e.target.value)} ></input>
+                        <input required type="text" className="input" placeholder="Beer name" onChange={(e) => setName(e.target.value)} />
                         <input type="text" className="input" placeholder="Beer Mark" onChange={(e) => setMark(e.target.value)} />
                         <input type="text" className="input" placeholder="Beer Type" onChange={(e) => setType(e.target.value)} />
                         <input type="number" className="input" max={100} min={0} placeholder="Beer Alk" onChange={(e) => setAlk(e.target.value)} />
                         <input type="text" className="input" placeholder="Beer Origin" onChange={(e) => setOrigin(e.target.value)} />
                         <input type="number" className="input" min={0} max={5} placeholder="Beer Rating" onChange={(e) => setRating(e.target.value)} />
                         <div>
-                        <p class = "labelText">Upload beer photo:</p>
+                        <p className = "labelText">Upload beer photo:</p>
                         <input type="file" className="input" onChange={handleFileChange} accept ="image/*" />
                             {src && (
                                 <div>
@@ -100,10 +100,10 @@ const AddBeer = () => {
                                         onChange={setCrop}
                                         onComplete={image && getCropperImg}
                                         src={src}
-                                    ></ReactCrop>
+                                    />
                                 </div>
                             )}
-                            {cropped && <img src={cropped}></img>}
+                            {cropped && <img alt='' src={cropped}/>}
                         </div>
                         <div className="buttonStyle" onClick={submitBeer} >Send</div>
 

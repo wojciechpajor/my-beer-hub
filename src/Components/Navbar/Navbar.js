@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <nav className='hamNav'>
-            <label form='hamburger'>&#9776;</label>
+            <label for='hamburger'>&#9776;</label>
             <input type='checkbox' id='hamburger' className='hamburger' />
             <div className='hamItems'>
                 <Link to='/' className={activeUrl==="http://localhost:3000/"?"NavLinkStyleActive":"NavLinkStyle"} onClick={(e) => toggleHam(e)}>Home</Link>

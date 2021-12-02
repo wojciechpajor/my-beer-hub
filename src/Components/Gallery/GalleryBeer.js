@@ -19,7 +19,7 @@ const GalleryBeer = (beer) => {
 
     return (
         <div className="p-5" style={{"background": "rgba(33,37,41,0.4"}}>
-            <div className="row d-flex justify-content-center align-content-center text-center" style={{"background": "rgba(33,37,41,0.6", "border-radius": "5px"}}>
+            <div className="row d-flex justify-content-center align-content-center text-center" style={{"background": "rgba(33,37,41,0.6", "borderRadius": "5px"}}>
                 <div style={{'height': "300px"}}>
                     <img className="img-fluid p-3" style={{'height': "250px"}} src ={choseSource()} alt={altImage}/>
                     <span className="font-weight-bolder text-white">{name}</span>
