@@ -2,22 +2,14 @@ import "./Navbar.css";
 import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import { selectUserEmail, setActiveUser } from '../../Features/userSlice';
-
+import {useEffect} from "react";
 
 const Navbar = () => {
 
     const dispatch = useDispatch()
     const userEmail = useSelector(selectUserEmail)
 
-    const handleLogOut = () => {
-        dispatch(setActiveUser({
-            userName: null,
-            userEmail: null
-          }))
-    }
-
-    const handleClick = () => {
-        document.getElementById("hamburger").checked = false;
+    useEffect( () => {
         let navButtons = document.getElementsByClassName("NavLinkStyle");
         for (let i = 0; i < navButtons.length; i++) {
             navButtons[i].addEventListener("click", function() {
@@ -28,6 +20,19 @@ const Navbar = () => {
                 this.className += " active";
             });
         }
+    }, [])
+
+    const handleLogOut = () => {
+        dispatch(setActiveUser({
+            userName: null,
+            userEmail: null
+          }))
+    }
+
+
+
+    const handleClick = () => {
+        document.getElementById("hamburger").checked = false;
     }
 
     return (
@@ -35,7 +40,7 @@ const Navbar = () => {
             <label for='hamburger'>&#9776;</label>
             <input type='checkbox' id='hamburger' className='hamburger' />
             <div id='navbarContainer' className='hamItems'>
-                <Link to='/' className="NavLinkStyle " onClick={(e) => handleClick(e)}>Home</Link>
+                <Link to='/' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Home</Link>
                 <Link to='/gallery' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Gallery</Link>
                 <Link to='/addbeer' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Add beer</Link>
                 {
