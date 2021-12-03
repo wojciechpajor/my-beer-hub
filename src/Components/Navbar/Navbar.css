@@ -1,5 +1,5 @@
 .hamNav {
-    width: 100vw;
+    width: 100%;
     background: var(--black);
     position: sticky;
     top: 0;
@@ -36,8 +36,6 @@
 .NavLinkStyle:hover {
     color: white;
     font-weight: bold;
-    background-color: var(--my-blue);
-    border-radius: 5px;
     text-decoration: none;
 }
 
@@ -70,6 +68,16 @@
     .hamNav input:checked ~ .hamItems {display: block;}
 
 
+}
+
+.signupLink {
+    color: var(--light-yellow);
+    cursor: pointer !important;
+}
+.signupLink:hover {
+    font-weight: bold;
+    color: var(--light-yellow);
+    cursor: pointer !important;
 }
 
 

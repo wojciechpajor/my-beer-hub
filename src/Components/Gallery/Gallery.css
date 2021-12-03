@@ -2,7 +2,7 @@
 @import '~slick-carousel/slick/slick-theme.css';
 
 .galleryStyle {
-    width: 100vw;
+    width: 100%;
 }
 
 .highlightStyle {
@@ -12,7 +12,7 @@
 
 .sliderStyle {
     display: flex;
-    width: 100vw;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
 }
