@@ -22,7 +22,7 @@ function Gallery() {
         centerPadding: "0",
         infinite: true,
         autoplay: true,
-        speed: 500,
+        speed: 1500,
         focusOnSelect: true,
         arrows: false,
         slidesToShow: 5,

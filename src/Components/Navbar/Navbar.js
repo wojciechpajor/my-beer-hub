@@ -43,7 +43,7 @@ const Navbar = () => {
                 <Link to='/' className="NavLinkStyle active" onClick={(e) => handleClick(e)}>Home</Link>
                 <Link to='/gallery' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Gallery</Link>
                 <Link to='/addbeer' className="NavLinkStyle" onClick={(e) => handleClick(e)}>Add beer</Link>
-                <Button onClick={() => handleLogin()} className='btn btn-warning ml-auto px-5 m-1' style={{color:"white"}}>Login</Button>
+                <Button onClick={() => handleLogin()} className='btn btn-warning ml-auto px-5 m-1 mx-5' style={{color:"white"}}>Login</Button>
                 {showModal
                     ?
                     modalType === "Login" ? <Login setShowModal={setShowModal} setModalType={setModalType} /> : <Signup setShowModal={setShowModal} setModalType={setModalType} />

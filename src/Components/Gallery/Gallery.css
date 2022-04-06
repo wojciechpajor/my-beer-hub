@@ -2,6 +2,8 @@
 @import '~slick-carousel/slick/slick-theme.css';
 
 .galleryStyle {
+    display: flex;
+    flex-flow: column;
     width: 100%;
 }
 
@@ -13,6 +15,7 @@
 .sliderStyle {
     display: flex;
     width: 100%;
+    height: auto;
     margin-right: auto;
     margin-left: auto;
 }

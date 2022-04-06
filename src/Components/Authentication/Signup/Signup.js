@@ -34,16 +34,21 @@ const Signup = (props) => {
                         <input type="password" className="form-control" id="exampleInputPassword1"
                                placeholder="Password" />
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Confirm password</label>
+                        <input type="password" className="form-control" id="exampleInputPassword1"
+                               placeholder="Password" />
+                    </div>
                     <div className="form-check">
                         <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                        <label className="form-check-label" htmlFor="exampleCheck1">Stay logged</label>
+                        <label className="form-check-label" htmlFor="exampleCheck1">Accepted terms of use</label>
                     </div>
                 </form>
             </Modal.Body>
             <Modal.Footer className = "pt-0">
                 <div className="w-100">
-                    <p className="pt-0 mt-0 small">Dont have account ? Create one <span onClick={() => props.setModalType("Login")} className="signupLink">here</span> </p>
-                    <Button className="btn btn-warning px-5 mx-auto" style={{color: "white"}} onClick={(_) => handleModal()}>Login</Button>
+                    <p className="pt-0 mt-0 small">Have account already ? <span onClick={() => props.setModalType("Login")} className="signupLink">Login</span> </p>
+                    <Button className="btn btn-warning px-5 mx-auto" style={{color: "white"}} onClick={(_) => handleModal()}>Signup</Button>
                 </div>
             </Modal.Footer>
         </Modal>

@@ -28,10 +28,10 @@ const Login = (props) => {
                         <input type="password" className="form-control" id="exampleInputPassword1"
                                placeholder="Password" />
                     </div>
-                    <div className="form-check">
+{/*                    <div className="form-check">
                         <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                             <label className="form-check-label" htmlFor="exampleCheck1">Stay logged</label>
-                    </div>
+                    </div>*/}
                 </form>
             </Modal.Body>
             <Modal.Footer className = "pt-0">
