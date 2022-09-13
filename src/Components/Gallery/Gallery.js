@@ -1,72 +1,18 @@
 import './Gallery.css';
-import GalleryBeer from './GalleryBeer.js';
 import firebase from "../../firebase";
 import React, { useEffect, useState } from "react";
 import GalleryHighlightedBeer from "./GalleryHiglightedBeer";
-import Slider from "react-slick";
+import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 
 
 
 function Gallery() {
 
-    const renderSlides = () =>
-        beers.map(beer => (
-            <div>
-                <GalleryBeer props={beer}></GalleryBeer>
-            </div>
-        ));
-    const settings = {
-        className: "sliderStyle",
-        dots: false,
-        centerMode: true,
-        centerPadding: "0",
-        infinite: true,
-        autoplay: true,
-        speed: 1500,
-        focusOnSelect: true,
-        arrows: false,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1600,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ],
-        afterChange: (currentSlide) => {setHighlighterBeer(currentSlide)}
-    };
-
     const [beers, setBeers] = useState([])
-    const [highlightedBeer, setHighlighterBeer] = useState(0)
+    const [filterValue, setFilterValue] = useState("")
+    const filter = (value) => {
+
+    }
 
     useEffect( () => {firebase.firestore().collection('Beers').onSnapshot(snapshot => (
             setBeers(snapshot.docs.map(doc => doc.data()))
@@ -74,18 +20,27 @@ function Gallery() {
     }, [])
 
     return (
-    beers[highlightedBeer] ? (
-        <div className="galleryStyle">
-            <div className="highlightStyle">
-                <GalleryHighlightedBeer props = {beers[highlightedBeer]}></GalleryHighlightedBeer>
+        <div>
+            <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <p>Filter:</p>
+                <FormControl size={"small"} style={{width:200, margin:10}}>
+                    <InputLabel id="demo-simple-select-label">Type</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={"Type"}
+                        label="Type"
+                        placeholder={"Any"}
+                        onChange={() => {}}
+                    >
+                        <MenuItem value={10}>Ipa</MenuItem>
+                        <MenuItem value={20}>Apa</MenuItem>
+                        <MenuItem value={30}>Ale</MenuItem>
+                    </Select>
+                </FormControl>
             </div>
-            <Slider {...settings}>{renderSlides()}</Slider>
+            {beers.map(beer => <GalleryHighlightedBeer props={beer} />)}
         </div>
-    ) : (
-        <div>Loading</div>
-    )
-
-
     );
 
 }
