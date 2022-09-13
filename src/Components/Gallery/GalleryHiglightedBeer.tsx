@@ -1,6 +1,5 @@
 import './GalleryHiglightedBeer.css'
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React from "react";
 
 const GalleryHighlightedBeer = (beer) => {
 
@@ -15,12 +14,12 @@ const GalleryHighlightedBeer = (beer) => {
         }
     }
 
-    const {name, mark, type, alk, origin, rating, url,cropped} = beer.props
+    const {name, mark, type, alk, origin, rating, url,cropped,id} = beer.props
 
     return (
 
         <div className = "HighlightedBeerStyle" >
-            <img className = "HighlightedBeerImageStyle" src = {choseSource()} alt={altImage}></img>
+            <img className = "HighlightedBeerImageStyle" src = {choseSource()} alt={altImage} />
             <div>
                 <li>Name: {name}</li>
                 <li>Mark: {mark}</li>
@@ -28,6 +27,7 @@ const GalleryHighlightedBeer = (beer) => {
                 <li>Alk: {alk}</li>
                 <li>Origin: {origin}</li>
                 <li>rating: {rating}/5</li>
+                <li>id: {id}</li>
             </div>
 
         </div>

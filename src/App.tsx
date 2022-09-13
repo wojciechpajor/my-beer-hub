@@ -1,12 +1,13 @@
 import './App.css';
 import './colors.css';
-import Navbar from './Components/Navbar/Navbar.js';
+import Navbar from './Components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Components/Footer/Footer';
 import Gallery from './Components/Gallery/Gallery';
-import Home from './Components/Home/Home.js';
-import AddBeer from './Components/AddBeer/AddBeer.js';
+import Home from './Components/Home/Home';
+import AddBeer from './Components/AddBeer/AddBeer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import React from 'react';
 
 
 function App() {
