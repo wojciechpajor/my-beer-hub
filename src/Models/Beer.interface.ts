@@ -1,3 +1,5 @@
+import {UserComment} from "./UserComment";
+
 export interface Beer {
     id: string
     name: string
@@ -6,6 +8,8 @@ export interface Beer {
     alk: string
     origin: string
     rating: number
-    src?: string
+    cropped?: string
+    url?: string
     image?: string
+    comments?: UserComment[]
 }

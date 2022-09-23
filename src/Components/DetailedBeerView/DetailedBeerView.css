@@ -1,0 +1,13 @@
+.showcaseContainer {
+    display: flex;
+    flex-direction: row;
+    padding:20px;
+}
+.imageContainer {
+    height: 450px;
+}
+
+.detailsContainer {
+    font-size: 24px;
+    padding: 20px;
+}
