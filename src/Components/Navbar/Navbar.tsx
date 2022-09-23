@@ -18,7 +18,7 @@ const Navbar = () => {
     }
 
     const returnActiveClassIfLocation = (locationName: string) => {
-        return 'NavLinkStyle' + (location.pathname == locationName ? ' active' : '');
+        return `NavLinkStyle ${location.pathname == locationName ? ' active' : ''}`;
     }
 
     return (
