@@ -1,12 +1,12 @@
 import './Gallery.css';
 import firebase from "../../firebase";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import GalleryBeerTile from "./GalleryBeerTile";
-import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
-import {BeerTypes} from "../../Enums/BeerTypes.enum";
-import {Beer} from "../../Models/Beer.interface";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { BeerTypes } from "../../Enums/BeerTypes.enum";
+import { Beer } from "../../Models/Beer.interface";
 
-export function Gallery() {
+export const Gallery = () => {
 
     const [beers, setBeers] = useState<Beer[]>([]);
     const [filteredBeers, setFilteredBeers] = useState<Beer[]>([]);

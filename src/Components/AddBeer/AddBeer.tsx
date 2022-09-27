@@ -1,10 +1,10 @@
 import "./AddBeer.css"
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import firebase from "../../firebase";
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 
-const AddBeer = () => {
+export const AddBeer = () => {
     const [name, setName] = useState('');
     const [mark, setMark] = useState('');
     const [type, setType] = useState('');
@@ -123,5 +123,3 @@ const AddBeer = () => {
 
 
 }
-
-export default AddBeer;

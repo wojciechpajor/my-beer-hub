@@ -1,31 +1,27 @@
 import './App.css';
 import './colors.css';
-import Navbar from './Components/Navbar/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './Components/Footer/Footer';
-import {Gallery} from './Components/Gallery/Gallery';
-import Home from './Components/Home/Home';
-import AddBeer from './Components/AddBeer/AddBeer';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import React from 'react';
-import {DetailedBeerView} from "./Components/DetailedBeerView/DetailedBeerView";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { NavigationBar } from "./Components/NavigationBar/NavigationBar";
+import { Home } from "./Components/Home/Home";
+import { Gallery } from "./Components/Gallery/Gallery";
+import { AddBeer } from "./Components/AddBeer/AddBeer";
+import { DetailedBeerView } from "./Components/DetailedBeerView/DetailedBeerView";
+import { Footer } from "./Components/Footer/Footer";
 
 
-function App() {
-    return (
-        <Router>
-            <main role="main" className="App">
-                <Navbar/>
-                <Switch>
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/gallery" component={Gallery}/>
-                    <Route path="/addbeer" component={AddBeer}/>
-                    <Route path="/beer/:beerID" component={DetailedBeerView}/>
-                </Switch>
-                <Footer/>
-            </main>
-        </Router>
-    );
-}
+export const App = () =>
+    <div className="App">
 
-export default App;
+
+<Router>
+    <NavigationBar/>
+    <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/gallery" component={Gallery}/>
+        <Route path="/addbeer" component={AddBeer}/>
+        <Route path="/beer/:beerID" component={DetailedBeerView}/>
+    </Switch>
+    <Footer/>
+</Router>
+    </div>

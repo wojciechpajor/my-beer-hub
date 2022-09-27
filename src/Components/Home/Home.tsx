@@ -1,7 +1,7 @@
 import "./Home.css"
 import React from "react";
 
-const Home = () => {
+export const Home = () => {
     return (
         <>
             <div className="bannerBackground"></div>
@@ -16,5 +16,3 @@ const Home = () => {
         </>
     )
 }
-
-export default Home;
