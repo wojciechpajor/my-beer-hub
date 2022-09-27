@@ -1,5 +1,8 @@
-.HomeImageStyle {
-
+.bannerBackground {
+  height:calc(100vh - 86px);
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/home-page-beer-river-1500x630.jpg?alt=media&token=f33f0dea-e99c-4430-bb69-4840acabf03a");
+  background-size: cover;
+  opacity: 0.5;
 }
 
 .bannerStyle {
@@ -9,19 +12,27 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  font-size: 6vw;
   height:calc(100vh - 86px);
   width: 100%;
   text-align: center;
   color: var(--white);
-  }
-.bannerBackground {
-  height:calc(100vh - 86px);
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/home-page-beer-river-1500x630.jpg?alt=media&token=f33f0dea-e99c-4430-bb69-4840acabf03a");
-  background-size: cover;
-  background-blend-mode: color-burn;
-  opacity: 0.5;
 }
-.pStyle {
+
+.bannerTitle {
+  font-weight: bold;
+  font-size: 6vw;
+}
+
+.bannerSubtitle {
   font-size: 3vw;
 }
+
+.bannerSubtitleLink {
+  font-size: 3vw;
+  color: #619B8A;
+}
+
+.bannerSubtitleLink:hover {
+  color: #619B8A;
+}
+

@@ -1,21 +1,21 @@
 import './Gallery.css';
 import firebase from "../../firebase";
 import React, {useEffect, useState} from "react";
-import GalleryHighlightedBeer from "./GalleryHiglightedBeer";
+import GalleryBeerTile from "./GalleryBeerTile";
 import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 import {BeerTypes} from "../../Enums/BeerTypes.enum";
 import {Beer} from "../../Models/Beer.interface";
 
-function Gallery() {
+export function Gallery() {
 
     const [beers, setBeers] = useState<Beer[]>([]);
     const [filteredBeers, setFilteredBeers] = useState<Beer[]>([]);
-    const [filterValue, setFilterValue] = useState<BeerTypes>(BeerTypes.SHOW_ALL)
+    const [filterValue, setFilterValue] = useState<BeerTypes>(BeerTypes.SHOW_ALL);
     const beerTypes: string[] = Object.keys(BeerTypes);
 
     useEffect(() => {
         getBeers()
-    }, [])
+    }, []);
 
     const getBeers = () => {
         firebase.firestore()
@@ -39,31 +39,30 @@ function Gallery() {
     };
 
     return (
-        <div>
-            <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <div className="Gallery">
+            <div className="GalleryFilters">
                 <p>Filter:</p>
-                <FormControl size={"small"} style={{width: 200, margin: 10}}>
-                    <InputLabel id="demo-simple-select-label">Type</InputLabel>
+                <FormControl size={"small"} className="GalleryFiltersDropdown">
+                    <InputLabel id="beerType">Type</InputLabel>
                     <Select
-                        id="demo-simple-select"
-                        labelId="demo-simple-select-label"
+                        id="beerTypeSelect"
+                        labelId="beerType"
                         value={filterValue}
                         label="Type"
                         onChange={(e) => onBeerFilterChange(e.target.value as BeerTypes)}>
-
                         {beerTypes.map(beerType =>
                             <MenuItem key={beerType} value={BeerTypes[beerType]}>{BeerTypes[beerType]}</MenuItem>
                         )}
                     </Select>
                 </FormControl>
             </div>
-            {filteredBeers.map(filteredBeer => <GalleryHighlightedBeer key={filteredBeer.id} props={filteredBeer}/>)}
+            <div className="GalleryStyle">
+                {filteredBeers.map(filteredBeer => <GalleryBeerTile key={filteredBeer.id} props={filteredBeer}/>)}
+            </div>
         </div>
     );
 
 }
-
-export default Gallery;
 
 
 

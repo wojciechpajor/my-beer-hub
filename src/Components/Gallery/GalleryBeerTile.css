@@ -1,0 +1,14 @@
+.BeerTile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2rem;
+    list-style: none;
+    cursor: pointer;
+}
+
+.BeerTileImage {
+    height: 450px;
+    margin: 5px;
+}

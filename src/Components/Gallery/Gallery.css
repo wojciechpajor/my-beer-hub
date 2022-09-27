@@ -1,21 +1,20 @@
-@import '~slick-carousel/slick/slick.css';
-@import '~slick-carousel/slick/slick-theme.css';
-
-.galleryStyle {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
+.Gallery {
+    padding: 20px;
 }
 
-.highlightStyle {
+.GalleryFilters {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.sliderStyle {
-    display: flex;
-    width: 100%;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
+.GalleryFiltersDropdown {
+    width: 200px;
+    margin: 10px !important;
+}
+
+.GalleryStyle {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 }
