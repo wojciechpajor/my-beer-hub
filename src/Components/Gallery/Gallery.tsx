@@ -10,7 +10,7 @@ function Gallery() {
 
     const [beers, setBeers] = useState<Beer[]>([]);
     const [filteredBeers, setFilteredBeers] = useState<Beer[]>([]);
-    const [filterValue, setFilterValue] = useState<BeerTypes>(BeerTypes.SHOW_ALL)
+    const [filterValue, setFilterValue] = useState<BeerTypes | "SHOW_ALL">("SHOW_ALL")
     const beerTypes: string[] = Object.keys(BeerTypes);
 
     useEffect(() => {
@@ -30,9 +30,9 @@ function Gallery() {
             })
     }
 
-    const onBeerFilterChange = (beerType: BeerTypes) => {
+    const onBeerFilterChange = (beerType: BeerTypes | "SHOW_ALL") => {
         setFilterValue(beerType);
-        let filteredBeers: Beer[] = beerType == BeerTypes.SHOW_ALL
+        let filteredBeers: Beer[] | "SHOW_ALL" = beerType == "SHOW_ALL"
             ? beers
             : beers.filter(beer => beer.type == beerType)
         setFilteredBeers(filteredBeers);
@@ -51,6 +51,7 @@ function Gallery() {
                         label="Type"
                         onChange={(e) => onBeerFilterChange(e.target.value as BeerTypes)}>
 
+                        <MenuItem key={"noFilter"} value={"SHOW_ALL"}>{"Show All"}</MenuItem>
                         {beerTypes.map(beerType =>
                             <MenuItem key={beerType} value={BeerTypes[beerType]}>{BeerTypes[beerType]}</MenuItem>
                         )}
