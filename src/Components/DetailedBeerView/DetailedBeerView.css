@@ -1,0 +1,24 @@
+.showcaseContainer {
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    justify-content:center;
+    align-items:center;
+}
+.imageContainer {
+    height: 450px;
+}
+
+.detailsContainer {
+    font-size: 24px;
+    padding: 20px;
+}
+
+.commentsContainer {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}

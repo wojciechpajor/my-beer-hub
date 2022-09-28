@@ -18,7 +18,8 @@ margin: 2px;
 }
 
 .formStyle {
-    max-width: 320px;
+    width: 100%;
+    max-width: 500px;
     margin: auto;
     background-color: var(--black);
     padding: 30px;

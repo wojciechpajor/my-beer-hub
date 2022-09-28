@@ -1,8 +1,10 @@
 import './GalleryHiglightedBeer.css'
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React from "react";
+import { useHistory } from 'react-router-dom';
 
 const GalleryHighlightedBeer = (beer) => {
+
+    let history = useHistory()
 
     const altImage = "https://firebasestorage.googleapis.com/v0/b/my-beer-hub-355e2.appspot.com/o/No-photo.png?alt=media&token=11ec7801-2545-4b6d-85a4-896a27d957de"
 
@@ -15,19 +17,15 @@ const GalleryHighlightedBeer = (beer) => {
         }
     }
 
-    const {name, mark, type, alk, origin, rating, url,cropped} = beer.props
+    const {name, mark, type, alk, origin, rating, url,cropped,id} = beer.props
 
     return (
 
-        <div className = "HighlightedBeerStyle" >
-            <img className = "HighlightedBeerImageStyle" src = {choseSource()} alt={altImage}></img>
+        <div className = "HighlightedBeerStyle" onClick={() => history.push(`/beer/${id}`)} >
             <div>
+            <img className = "HighlightedBeerImageStyle" src = {choseSource()} alt={altImage} />
                 <li>Name: {name}</li>
-                <li>Mark: {mark}</li>
                 <li>Type: {type}</li>
-                <li>Alk: {alk}</li>
-                <li>Origin: {origin}</li>
-                <li>rating: {rating}/5</li>
             </div>
 
         </div>

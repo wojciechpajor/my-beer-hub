@@ -3,11 +3,9 @@
     margin: 5px;
     list-style: none;
     display: inline-flex;
-    font-size: 140%;
+    font-size: 120%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-
-
+    text-align: center;
 }
 
 .HighlightedBeerImageStyle {
