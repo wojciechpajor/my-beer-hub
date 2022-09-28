@@ -1,8 +1,9 @@
 import "./AddBeer.css"
 import React, {useState} from 'react';
 import firebase from "../../firebase";
-import ReactCrop from 'react-image-crop';
+import ReactCrop, {Crop} from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
+import {BeerTypes} from "../../Enums/BeerTypes.enum";
 
 const AddBeer = () => {
     const [name, setName] = useState('');
@@ -11,15 +12,11 @@ const AddBeer = () => {
     const [alk, setAlk] = useState('');
     const [origin, setOrigin] = useState('');
     const [rating, setRating] = useState('');
-    const [crop, setCrop] = useState({
-        aspect: 150 / 340,
-        width: 340,
-        height: 20,
-    });
+    const [crop, setCrop] = useState<Crop>({height: 20, unit: "px", x: 50, y: 50, aspect:150/340,width:340})
     const [cropped, setCropped] = useState(null);
     const [src, selectFile] = useState(null);
     const [image, setImage] = useState(null);
-    let x,y = 1
+    const beerTypes: string[] = Object.keys(BeerTypes);
 
 
     const ref = firebase.firestore().collection('Beers')
@@ -34,8 +31,8 @@ const AddBeer = () => {
 
         ctx.drawImage(
             image,
-            x * scaleX,
-            y * scaleY,
+            crop.x * scaleX,
+            crop.y * scaleY,
             crop.width * scaleX,
             crop.height * scaleY,
             0,
@@ -86,6 +83,12 @@ const AddBeer = () => {
                                onChange={(e) => setName(e.target.value)}/>
                         <input type="text" className="input" placeholder="Beer Mark"
                                onChange={(e) => setMark(e.target.value)}/>
+                        <select className="selectStyle" id="inputGroupSelect01" placeholder={"Beer Type"} >
+                            <option className="optionStyle" value="" disabled selected hidden>Beer Type</option>
+                            {beerTypes.map(beerType =>
+                                    <option className="optionStyle" key={beerType} value={BeerTypes[beerType]}>{BeerTypes[beerType]}</option>
+                                )}
+                        </select>
                         <input type="text" className="input" placeholder="Beer Type"
                                onChange={(e) => setType(e.target.value)}/>
                         <input type="number" className="input" max={100} min={0} placeholder="Beer Alk"
@@ -102,7 +105,7 @@ const AddBeer = () => {
                                     <ReactCrop
                                         onImageLoaded={setImage}
                                         crop={crop}
-                                        onChange={() => setCrop}
+                                        onChange={(crop) => setCrop(crop)}
                                         onComplete={image && getCropperImg}
                                         src={src}
                                     />
