@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="footer">Created by Lurd and saviour Bryksiu</footer>
+        <footer className="footer">Created by Wojciech Pajor</footer>
     )
 
 }

@@ -9,22 +9,26 @@ import AddBeer from './Components/AddBeer/AddBeer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import React from 'react';
 import {DetailedBeerView} from "./Components/DetailedBeerView/DetailedBeerView";
+import {AuthProvider} from "./Context/AuthContext";
 
 
 function App() {
     return (
-        <Router>
-            <main role="main" className="App">
-                <Navbar/>
-                <Switch>
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/gallery" component={Gallery}/>
-                    <Route path="/addbeer" component={AddBeer}/>
-                    <Route path="/beer/:beerID" component={DetailedBeerView} />
-                </Switch>
-                <Footer/>
-            </main>
-        </Router>
+        <AuthProvider>
+            <Router>
+                <main role="main" className="App">
+                    <Navbar/>
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/gallery" component={Gallery}/>
+                        <Route path="/addbeer" component={AddBeer}/>
+                        <Route path="/beer/:beerID"
+                               component={DetailedBeerView} />
+                    </Switch>
+                    <Footer/>
+                </main>
+            </Router>
+        </AuthProvider>
     );
 }
 

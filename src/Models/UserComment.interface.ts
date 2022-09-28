@@ -1,4 +1,4 @@
-export interface UserComment {
+export interface UserCommentInterface {
     author: string,
     text: string,
     date: Date,

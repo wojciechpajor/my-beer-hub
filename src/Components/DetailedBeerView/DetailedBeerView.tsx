@@ -59,7 +59,7 @@ export const DetailedBeerView:FC = () => {
                             <li>Type: {beer.type}</li>
                             <li>Alk: {beer.alk}%</li>
                             <li>Origin: {beer.origin}</li>
-                            <li>rating: {beer.rating}/5</li>
+                            {/*<li>rating: {beer.rating}/5</li>*/}
                         </div>
                     </div>
                     <div className="commentsContainer">

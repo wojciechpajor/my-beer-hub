@@ -15,12 +15,11 @@ const AddBeer = () => {
         aspect: 150 / 340,
         width: 340,
         height: 20,
-        x: 20,
-        y: 20
     });
     const [cropped, setCropped] = useState(null);
     const [src, selectFile] = useState(null);
     const [image, setImage] = useState(null);
+    let x,y = 1
 
 
     const ref = firebase.firestore().collection('Beers')
@@ -35,8 +34,8 @@ const AddBeer = () => {
 
         ctx.drawImage(
             image,
-            crop.x * scaleX,
-            crop.y * scaleY,
+            x * scaleX,
+            y * scaleY,
             crop.width * scaleX,
             crop.height * scaleY,
             0,
@@ -55,7 +54,7 @@ const AddBeer = () => {
         ref
             .doc()
             .set(newBeer)
-
+            .then(() => console.log("success"))
     }
 
 

@@ -5,7 +5,6 @@ const Home = () => {
     return (
         <>
             <div className="bannerBackground">
-
             </div>
             <div className={"bannerStyle"}>
                 <p><b>Welcome to Beer-Hub !</b></p>

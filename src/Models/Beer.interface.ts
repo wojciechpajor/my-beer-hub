@@ -1,15 +1,18 @@
-import {UserComment} from "./UserComment";
+import {UserCommentInterface} from "./UserComment.interface";
+import {UserRatingInterface} from "./UserRating.interface";
+import {BeerTypes} from "../Enums/BeerTypes.enum";
 
 export interface Beer {
     id: string
     name: string
     mark: string
-    type: string
+    type: BeerTypes
     alk: string
     origin: string
-    rating: number
+    userEmail: string
     cropped?: string
     url?: string
     image?: string
-    comments?: UserComment[]
+    rating: UserRatingInterface[]
+    comments?: UserCommentInterface[]
 }
